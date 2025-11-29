@@ -40,6 +40,8 @@ let substract = "2025" - 42;  // (mathematical subtraction)
 console.log(add);
 console.log(substract);
 
+// + can mean addition OR string concatenation
+// - only means mathematical subtraction, so it converts to numbers
 
 
 
