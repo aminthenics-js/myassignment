@@ -51,3 +51,4 @@ console.log(`And my age is ${realAge}`);
 
 
 console.table([birtYear, currentYear, role, realAge])
+
