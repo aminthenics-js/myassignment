@@ -20,4 +20,4 @@ console.log(name);
     var y = 20;
 }
 console.log(y);
-//console.log(x);
+// console.log(x);
