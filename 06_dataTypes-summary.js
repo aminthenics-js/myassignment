@@ -100,7 +100,3 @@ console.log(favoriteFood);
   console.table([friends])
 
   
-  
-  
-
-  
