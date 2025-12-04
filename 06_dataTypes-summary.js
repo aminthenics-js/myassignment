@@ -100,3 +100,75 @@ console.log(favoriteFood);
   console.table([friends])
 
   
+
+
+    // The Practical Difference 
+// Experiment 1: PRIMITIVES (copied by VALUE)
+    let a = 10;
+    let b = a;      // b gets a COPY of 10
+    a = 20;
+    
+  console.log("a =", a);   // 20
+  console.log("b =", b);  // 10
+  
+
+// Experiment 2: OBJECTS (copied by REFERENCE)
+    let obj1 = {name: "Aminthenics"}
+    let obj2 = obj1       // obj2 points to SAME object
+    obj1.name = "Amin"
+
+  console.log("obj1.name =", obj1.name);  // Amin
+  console.log("obj2.name =", obj2.name); // Amin
+
+  
+
+
+
+  // Real Consequences
+
+// Scenario 1: Accidental Data Corruption
+   const originalCart = ["apple", "pineapple"];
+   const currentCart = originalCart;   // Danger
+   currentCart.push("orange")
+
+console.log("originalCart =", originalCart);  // Orange, I accidentally modified someone else's cart.
+
+// Scenario 2: Function Side Effects
+  function addItem (cart, item) {
+    cart.push(item)
+    return cart
+  }
+
+  const myCart = ["milk"];
+  const newCart = addItem(myCart, "eggs");
+
+console.log("myCart =", myCart);      // Milk, Eggs
+console.log("newCart =", newCart);    // Milk, Eggs
+
+
+
+
+  //  How to Avoid Problems
+
+  // Learn to make TRUE COPIES (not references):
+
+  // For Arrays
+  const arr1 = [1, 2, 3];
+  const arrCopy1 = [...arr1];            // Spread operator
+  const arrCopy2 = arr1.slice();        // Slice method
+  const arrCopy3 = Array.from(arr1);   // Explcit
+
+  arrCopy1.push(4)
+
+  console.log("Original:", arr1);
+  console.log("Copy:", arrCopy1);
+
+  const obj0 = {name: "Aminthenics"};
+  const objCopy1 = {...obj0};
+  const objCopy2 = Object.assign({}, obj0);
+
+  objCopy1.name = "Amin"
+  console.log("Original =", obj0);
+  console.log("Copy =", objCopy1);
+  
+  
