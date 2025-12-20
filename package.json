@@ -4,8 +4,8 @@
   "description": "<br>\r DAILY PRACTICE AND ASSIGNMENT. \r <br>\r Author - Aminur Rahman",
   "main": "01_array.js",
   "scripts": {
-    "start": "node 02_basics/0",
-    "test": "node 02_basics/0"
+    "start": "node test.js",
+    "test": "node test.js"
   },
   "author": "Aminur Rahman",
   "license": "ISC"
