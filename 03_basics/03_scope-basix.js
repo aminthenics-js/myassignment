@@ -7,8 +7,8 @@
 
     function testFunction(){
         let functionVar = "I'm in function";
-        console.log("Inside function: ", globalVar);       // Can't access globalVar
-        console.log("Inside function: ", functionVar);     // Can't access functionVar
+        console.log("Inside function: ", globalVar);       // Can access globalVar
+        console.log("Inside function: ", functionVar);     // Can access functionVar
     }
 
 
@@ -80,7 +80,7 @@
         const fruits = ["apple", "banana", "orange", "grape"];
 
         
-        for(let order = 0; order <= fruits.length; order++){
+        for(let order = 0; order < fruits.length; order++){
             console.log(fruits[order]);     
         }
 
