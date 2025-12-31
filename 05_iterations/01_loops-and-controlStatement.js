@@ -198,3 +198,5 @@
 
     console.log(sumOddNumbers([1, 2, 3, 4, 5]));
     console.log(sumOddNumbers([2, 4, 6]));
+
+    
