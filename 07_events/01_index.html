@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Basics Practice</title>
+    <style>
+        .active { background-color: yellow; }
+        #parent { padding: 20px; background: #eee; margin: 10px; }
+        button { margin: 5px; padding: 10px; }
+        li { padding: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <!-- Task 1 & 5 -->
+    <button id="myButton">Click me (3 times max)</button>
+    <button id="infoButton">Click for Event Info</button>
+    
+    <!-- Task 2 -->
+    <button id="toggleButton">Start Listening</button>
+    
+    <!-- Task 3 & 4 -->
+    <div id="parent">
+        Parent Div
+        <button id="child">Child Button</button>
+    </div>
+    
+    <!-- Task 6 -->
+    <form id="myForm">
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+    
+    <!-- Task 7 -->
+    <ul id="myList">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Orange</li>
+    </ul>
+
+    <script>
+        
+                // Task 1: Basic Click Event
+       
+        let clickCount = 0;
+
+      function handleclick(ev){
+        clickCount++;
+
+        if(clickCount <= 3){
+            console.log("Button clicked!");
+        }
+
+        if(clickCount === 3){
+            ev.target.removeEventListener('click', handleclick);
+             ev.target.remove();
+        }
+      }
+
+      document.querySelector('#myButton').addEventListener('click', handleclick);
+
+
+                // Task 2: Toggle Event
+
+       
+        const toggleBtn = document.querySelector('#toggleButton');
+        let isListening = false;
+
+        function logCoordinates(event) {
+            console.log(`X: ${event.clientX}, Y: ${event.clientY}`);
+        }
+
+
+        toggleBtn.addEventListener('click', function() {
+    
+        isListening = !isListening;
+
+    
+        toggleBtn.textContent = isListening ? "Stop Listening" : "Start Listening";
+
+    
+    if (isListening) {
+        document.addEventListener('click', logCoordinates);
+    } else {
+        document.removeEventListener('click', logCoordinates);
+    }
+ });
+
+    </script>
+</body>
+</html>
